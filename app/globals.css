@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  background: #f4f1ea;
+}
+
+a {
+  color: #1e1b16;
+}
+
+a:hover {
+  color: #55504a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes nb-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes nb-word {
+  0% { opacity: 0; transform: translateY(0.18em); }
+  12% { opacity: 1; transform: translateY(0); }
+  88% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-0.18em); }
+}
+
+@keyframes nb-row {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes nb-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+@keyframes nb-travel {
+  from { left: 0%; }
+  to { left: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
