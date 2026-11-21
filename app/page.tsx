@@ -1,13 +1,14 @@
 import { ACCENT as accent } from "./accent";
 import RotatingWord from "./components/RotatingWord";
 import LiveLog from "./components/LiveLog";
+import LogoMark from "./components/LogoMark";
 
 export default function Home() {
   return (
       <div style={{ background: '#F4F1EA', color: '#1E1B16', fontFamily: "'Golos Text', 'Segoe UI', Arial, sans-serif", fontSize: '17px', lineHeight: '1.6' }}>
       
       <header style={{ maxWidth: '1200px', margin: '0 auto', padding: '28px 32px', display: 'flex', flexWrap: 'wrap', gap: '24px', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #1E1B16' }}>
-      <a href="#top" style={{ textDecoration: 'none', fontFamily: "'Literata', Georgia, serif", fontSize: '26px', letterSpacing: '-0.01em' }}>Nimble</a>
+      <a href="#top" aria-label="Nimble — начало" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px', fontFamily: "'Literata', Georgia, serif", fontSize: '26px', letterSpacing: '-0.01em' }}><LogoMark size={30} />Nimble</a>
       <nav aria-label="Основно меню" style={{ display: 'flex', flexWrap: 'wrap', gap: '28px', fontSize: '15px', alignItems: 'center' }}>
       <a href="#automations" style={{ textDecoration: 'none' }}>Автоматизации</a>
       <a href="#services" style={{ textDecoration: 'none' }}>Решения</a>
