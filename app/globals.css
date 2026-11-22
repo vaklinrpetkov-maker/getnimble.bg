@@ -5,10 +5,17 @@ body {
 
 a {
   color: #1e1b16;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 
+/* --accent is set on <html> in layout.tsx from app/accent.ts. */
 a:hover {
-  color: #55504a;
+  color: var(--accent);
+}
+
+/* Dark filled button: its colours are inline, so the hover needs !important. */
+.nb-btn:hover {
+  background-color: var(--accent) !important;
 }
 
 html {

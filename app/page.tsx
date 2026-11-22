@@ -31,7 +31,7 @@ export default function Home() {
       <h1 style={{ flex: '999 1 640px', minWidth: '0', margin: '0', fontFamily: "'Literata', Georgia, serif", fontWeight: '400', fontSize: 'clamp(44px, 6vw, 92px)', lineHeight: '1.04', letterSpacing: '-0.025em' }}>Умни системи, които поемат <RotatingWord /> вместо екипа ви.</h1>
       <div style={{ flex: '1 1 280px', minWidth: '0', display: 'flex', flexDirection: 'column', gap: '20px', paddingTop: '20px', borderTop: '1px solid #1E1B16' }}>
       <p style={{ margin: '0', color: '#3C3832' }}>Внедряваме AI асистенти, автоматизирани работни процеси и AI-задвижвани ERP и CRM системи, които се вграждат в начина, по който фирмата ви вече работи.</p>
-      <a href="#contact" style={{ textDecoration: 'none', background: '#1E1B16', color: '#F4F1EA', padding: '15px 22px', alignSelf: 'flex-start', minHeight: '24px', display: 'flex', alignItems: 'center', fontWeight: '500' }}>Заявете консултация</a>
+      <a href="#contact" className="nb-btn" style={{ textDecoration: 'none', background: '#1E1B16', color: '#F4F1EA', padding: '15px 22px', alignSelf: 'flex-start', minHeight: '24px', display: 'flex', alignItems: 'center', fontWeight: '500' }}>Заявете консултация</a>
       </div>
       </div>
       <figure aria-label="Пример за автоматизации в реално време" style={{ margin: '64px 24px 0', border: '1px solid #1E1B16', background: '#FBF9F4' }}>

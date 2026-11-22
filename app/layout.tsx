@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ACCENT } from "./accent";
 
 export const metadata: Metadata = {
   title: "Nimble — AI автоматизации, AI асистенти и умни ERP/CRM системи",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="bg">
+    <html lang="bg" style={{ "--accent": ACCENT } as React.CSSProperties}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
