@@ -237,8 +237,8 @@ export default function Home() {
       </div>
       </section>
       
-      <footer style={{ maxWidth: '1200px', margin: '0 auto', padding: '28px 32px', borderTop: '1px solid #1E1B16', display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'space-between', fontSize: '14px', color: '#55504A' }}>
-      <span>© 2026 Нимбъл ЕООД · ЕИК [ЕИК] · София</span>
+      <footer style={{ maxWidth: '1200px', margin: '0 auto', padding: '28px 32px', borderTop: '1px solid #1E1B16', display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'space-between', alignItems: 'center', fontSize: '14px', color: '#55504A' }}>
+      <span style={{ display: 'flex', alignItems: 'center', gap: '10px' }}><LogoMark size={20} />© 2026 Нимбъл ЕООД · ЕИК [ЕИК] · София</span>
       <span>getnimble.bg</span>
       </footer>
       
