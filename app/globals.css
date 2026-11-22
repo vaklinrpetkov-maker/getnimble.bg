@@ -50,3 +50,150 @@ html {
     scroll-behavior: auto;
   }
 }
+
+/* "Как работим" roadmap: a line runs from step 1 to step 4, and each number
+   counts up from 1 when the line reaches it. One 10s cycle:
+   0-22% line 1->2, 22-44% line 2->3, 44-66% line 3->4, counts land on arrival,
+   90-97% lines fade, 93-100% numbers roll back to 1. */
+.nb-step-head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nb-path {
+  flex: 1;
+  height: 1px;
+  background: #cfc8ba;
+  position: relative;
+  margin-right: -24px; /* reach across the 40px column gap towards the next number */
+}
+
+.nb-path-fill {
+  position: absolute;
+  left: 0;
+  top: -0.5px;
+  height: 2px;
+  width: 0;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.nb-path-dot {
+  position: absolute;
+  right: -4px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.nb-seg-1 { animation-name: nb-seg-1; }
+.nb-seg-2 { animation-name: nb-seg-2; }
+.nb-seg-3 { animation-name: nb-seg-3; }
+
+@keyframes nb-seg-1 {
+  0% { width: 0; opacity: 1; }
+  22% { width: 100%; }
+  90% { width: 100%; opacity: 1; }
+  97%, 100% { width: 100%; opacity: 0; }
+}
+
+@keyframes nb-seg-2 {
+  0%, 22% { width: 0; opacity: 0; }
+  22.01% { width: 0; opacity: 1; }
+  44% { width: 100%; }
+  90% { width: 100%; opacity: 1; }
+  97%, 100% { width: 100%; opacity: 0; }
+}
+
+@keyframes nb-seg-3 {
+  0%, 44% { width: 0; opacity: 0; }
+  44.01% { width: 0; opacity: 1; }
+  66% { width: 100%; }
+  90% { width: 100%; opacity: 1; }
+  97%, 100% { width: 100%; opacity: 0; }
+}
+
+/* Counting numbers: a clipped box holding a vertical strip of digits 1..n. */
+.nb-count {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  font-family: "Literata", Georgia, serif;
+  font-size: 64px;
+  line-height: 1.2;
+  height: 1.2em;
+  margin: -0.1em 0; /* keep the 64px footprint of the plain step-1 number */
+}
+
+.nb-count-final {
+  display: block;
+  color: transparent;
+}
+
+.nb-count-strip {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.nb-count-strip > span {
+  display: block;
+  height: 1.2em;
+}
+
+.nb-count-2 .nb-count-strip { animation-name: nb-count-2; }
+.nb-count-3 .nb-count-strip { animation-name: nb-count-3; }
+.nb-count-4 .nb-count-strip { animation-name: nb-count-4; }
+
+@keyframes nb-count-2 {
+  0%, 22% { transform: translateY(0); }
+  25%, 93% { transform: translateY(-1.2em); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes nb-count-3 {
+  0%, 44% { transform: translateY(0); }
+  47% { transform: translateY(-1.2em); }
+  50%, 93% { transform: translateY(-2.4em); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes nb-count-4 {
+  0%, 66% { transform: translateY(0); }
+  69% { transform: translateY(-1.2em); }
+  72% { transform: translateY(-2.4em); }
+  75%, 93% { transform: translateY(-3.6em); }
+  100% { transform: translateY(0); }
+}
+
+/* Below four columns the steps wrap, so a left-to-right line no longer points
+   at the next step. Hide the line and show the final numbers. */
+@media (max-width: 1160px) {
+  .nb-path,
+  .nb-count-strip {
+    display: none;
+  }
+  .nb-count-final {
+    color: inherit;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nb-path-fill {
+    width: 100%;
+  }
+  .nb-count-strip {
+    display: none;
+  }
+  .nb-count-final {
+    color: inherit;
+  }
+}

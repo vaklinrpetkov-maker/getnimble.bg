@@ -2,6 +2,7 @@ import { ACCENT as accent } from "./accent";
 import RotatingWord from "./components/RotatingWord";
 import LiveLog from "./components/LiveLog";
 import LogoMark from "./components/LogoMark";
+import CountNumber from "./components/CountNumber";
 
 export default function Home() {
   return (
@@ -172,22 +173,22 @@ export default function Home() {
       <p style={{ margin: '0 0 48px', fontFamily: "'JetBrains Mono', monospace", fontSize: '13px', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#55504A' }}>Как работим</p>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(240px, 100%), 1fr))', gap: '48px 40px' }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-      <span style={{ fontFamily: "'Literata', Georgia, serif", fontSize: '64px', lineHeight: '1', color: `${accent}` }}>1</span>
+      <div className="nb-step-head"><span style={{ fontFamily: "'Literata', Georgia, serif", fontSize: '64px', lineHeight: '1', color: `${accent}` }}>1</span><span className="nb-path" aria-hidden="true"><span className="nb-path-fill nb-seg-1" style={{ background: accent }}><span className="nb-path-dot" style={{ background: accent }} /></span></span></div>
       <h3 style={{ margin: '0', fontFamily: "'Literata', Georgia, serif", fontWeight: '500', fontSize: '24px', lineHeight: '1.25' }}>Анализ на процесите</h3>
       <p style={{ margin: '0', color: '#3C3832' }}>Откриваме къде се губи време и кое си струва да се автоматизира първо.</p>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-      <span style={{ fontFamily: "'Literata', Georgia, serif", fontSize: '64px', lineHeight: '1', color: `${accent}` }}>2</span>
+      <div className="nb-step-head"><CountNumber n={2} color={accent} /><span className="nb-path" aria-hidden="true"><span className="nb-path-fill nb-seg-2" style={{ background: accent }}><span className="nb-path-dot" style={{ background: accent }} /></span></span></div>
       <h3 style={{ margin: '0', fontFamily: "'Literata', Georgia, serif", fontWeight: '500', fontSize: '24px', lineHeight: '1.25' }}>Дизайн на решението</h3>
       <p style={{ margin: '0', color: '#3C3832' }}>Карта на автоматизациите, системите и интеграциите, с ясна цена по етапи.</p>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-      <span style={{ fontFamily: "'Literata', Georgia, serif", fontSize: '64px', lineHeight: '1', color: `${accent}` }}>3</span>
+      <div className="nb-step-head"><CountNumber n={3} color={accent} /><span className="nb-path" aria-hidden="true"><span className="nb-path-fill nb-seg-3" style={{ background: accent }}><span className="nb-path-dot" style={{ background: accent }} /></span></span></div>
       <h3 style={{ margin: '0', fontFamily: "'Literata', Georgia, serif", fontWeight: '500', fontSize: '24px', lineHeight: '1.25' }}>Внедряване и интеграция</h3>
       <p style={{ margin: '0', color: '#3C3832' }}>Пускаме на етапи, без да спираме работата, и измерваме резултата.</p>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-      <span style={{ fontFamily: "'Literata', Georgia, serif", fontSize: '64px', lineHeight: '1', color: `${accent}` }}>4</span>
+      <CountNumber n={4} color={accent} />
       <h3 style={{ margin: '0', fontFamily: "'Literata', Georgia, serif", fontWeight: '500', fontSize: '24px', lineHeight: '1.25' }}>Обучение и развитие</h3>
       <p style={{ margin: '0', color: '#3C3832' }}>Обучаваме екипа и добавяме нови автоматизации, докато фирмата расте.</p>
       </div>
@@ -238,7 +239,7 @@ export default function Home() {
       </section>
       
       <footer style={{ maxWidth: '1200px', margin: '0 auto', padding: '28px 32px', borderTop: '1px solid #1E1B16', display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'space-between', alignItems: 'center', fontSize: '14px', color: '#55504A' }}>
-      <span style={{ display: 'flex', alignItems: 'center', gap: '10px' }}><LogoMark size={20} />© 2026 Нимбъл ЕООД · ЕИК [ЕИК] · София</span>
+      <span style={{ display: 'flex', alignItems: 'center', gap: '10px' }}><LogoMark size={20} />© 2026 Нимбъл ЕООД · ЕИК 208021692 · София</span>
       <span>getnimble.bg</span>
       </footer>
       
