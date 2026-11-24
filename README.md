@@ -33,10 +33,13 @@ This writes a plain static website to `out/`. You can:
 | `app/accent.ts` | The accent colour (`#7A2E24`); change it once to restyle every accent |
 | `app/layout.tsx` | Page title, description, social preview tags and fonts (Literata, Golos Text, JetBrains Mono) |
 
-## Placeholders to fill before launch
+## Hidden until real content is ready
 
-Search `app/page.tsx` for square brackets:
+The client quote and the case-study figures are switched off with `SHOW_TESTIMONIAL` at the top of `app/page.tsx`. Fill in the quote, name, position and figures there, then set it to `true`.
 
-- `[ИМЕЙЛ]`, `[ТЕЛЕФОН]`, `[ЕИК]`: contact details in the CTA and footer
-- `[N]`, `[X ч/седм.]`: case-study figures
-- `[ЦИТАТ ОТ КЛИЕНТА …]`, `[ИМЕ]`, `[ДЛЪЖНОСТ]`: client quote
+## SEO files
+
+- `app/layout.tsx`: page title, description, canonical URL and the structured data (company and services)
+- `app/opengraph-image.tsx`: the social preview image, generated at build time
+- `public/robots.txt`, `public/sitemap.xml`: add every new page to the sitemap
+- `public/.htaccess`: HTTPS redirect, 404 page and the preview image content type

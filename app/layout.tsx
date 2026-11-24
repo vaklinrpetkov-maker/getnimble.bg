@@ -2,19 +2,59 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ACCENT } from "./accent";
 
+const SITE_URL = "https://getnimble.bg";
+const TITLE = "Автоматизация на бизнес процеси и AI решения за бизнеса | Nimble";
+const DESCRIPTION =
+  "Nimble автоматизира бизнес процеси с изкуствен интелект: AI асистенти и чатбот за сайт, CRM и ERP системи, интеграция на системи и обучение на екипа.";
+
 export const metadata: Metadata = {
-  title: "Nimble — AI автоматизации, AI асистенти и умни ERP/CRM системи",
-  description:
-    "Внедряваме AI асистенти, автоматизирани работни процеси и AI-задвижвани ERP и CRM системи, които се вграждат в начина, по който фирмата ви вече работи.",
-  metadataBase: new URL("https://getnimble.bg"),
+  title: TITLE,
+  description: DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Nimble — умни системи, които поемат рутината вместо екипа ви",
-    description:
-      "AI асистенти, автоматизации, интеграция на системи и обучение на екипа за работа с AI.",
-    url: "https://getnimble.bg",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
     siteName: "Nimble",
     locale: "bg_BG",
     type: "website",
+  },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
+};
+
+// Structured data: tells search engines who the company is and what it offers.
+const SERVICES = [
+  "Автоматизация на бизнес процеси",
+  "AI асистенти и чатбот за сайт",
+  "CRM система",
+  "ERP система",
+  "Интеграция на системи",
+  "Обучение по изкуствен интелект",
+];
+
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": `${SITE_URL}/#organization`,
+  name: "Nimble",
+  legalName: "Нимбъл ЕООД",
+  url: SITE_URL,
+  logo: `${SITE_URL}/brand/nimble-mark.svg`,
+  image: `${SITE_URL}/opengraph-image`,
+  description: DESCRIPTION,
+  email: "office@getnimble.bg",
+  taxID: "208021692",
+  address: { "@type": "PostalAddress", addressLocality: "София", addressCountry: "BG" },
+  areaServed: { "@type": "Country", name: "България" },
+  knowsLanguage: ["bg", "en"],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Услуги",
+    itemListElement: SERVICES.map((name) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name },
+    })),
   },
 };
 
@@ -29,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
         />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }} />
       </head>
       <body>{children}</body>
     </html>

@@ -1,0 +1,15 @@
+# Apache rules for the static site on SuperHosting (copied to out/ by `npm run build`).
+
+# Send plain HTTP to HTTPS. Certificate renewal checks under /.well-known/ are left alone.
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Use the site's own "not found" page.
+ErrorDocument 404 /404.html
+
+# The social preview image is exported without a file extension. Tell browsers it is a PNG.
+<Files "opengraph-image">
+  ForceType image/png
+</Files>
