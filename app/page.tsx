@@ -4,6 +4,7 @@ import LiveLog from "./components/LiveLog";
 import LogoMark from "./components/LogoMark";
 import CountNumber from "./components/CountNumber";
 import CountUp from "./components/CountUp";
+import ConsultDialog from "./components/ConsultDialog";
 
 // Headline figures shown in the "Какво печелите" strip.
 const STATS: { to: number; prefix?: string; suffix: string; label: string }[] = [
@@ -28,7 +29,7 @@ export default function Home() {
       <a href="#integration" style={{ textDecoration: 'none' }}>Интеграция</a>
       <a href="#training" style={{ textDecoration: 'none' }}>Обучение</a>
       <a href="#case" style={{ textDecoration: 'none' }}>Казус</a>
-      <a href="#contact" style={{ textDecoration: 'underline', textUnderlineOffset: '4px', color: `${accent}`, minHeight: '44px', display: 'flex', alignItems: 'center' }}>Заявете консултация</a>
+      <a href="#contact" data-consult style={{ textDecoration: 'underline', textUnderlineOffset: '4px', color: `${accent}`, minHeight: '44px', display: 'flex', alignItems: 'center' }}>Заявете консултация</a>
       </nav>
       </header>
       
@@ -44,7 +45,7 @@ export default function Home() {
       <h1 style={{ flex: '999 1 640px', minWidth: '0', margin: '0', fontFamily: "'Literata', Georgia, serif", fontWeight: '400', fontSize: 'clamp(44px, 6vw, 92px)', lineHeight: '1.04', letterSpacing: '-0.025em' }}>Умни системи, които поемат <RotatingWord /> вместо екипа ви.</h1>
       <div style={{ flex: '1 1 280px', minWidth: '0', display: 'flex', flexDirection: 'column', gap: '20px', paddingTop: '20px', borderTop: '1px solid #1E1B16' }}>
       <p style={{ margin: '0', color: '#3C3832' }}>Премахнете рутината. Фокусирайте се върху това, което е наистина важно.</p>
-      <a href="#contact" className="nb-btn" style={{ textDecoration: 'none', background: '#1E1B16', color: '#F4F1EA', padding: '15px 22px', alignSelf: 'flex-start', minHeight: '24px', display: 'flex', alignItems: 'center', fontWeight: '500' }}>Заявете консултация</a>
+      <a href="#contact" data-consult className="nb-btn" style={{ textDecoration: 'none', background: '#1E1B16', color: '#F4F1EA', padding: '15px 22px', alignSelf: 'flex-start', minHeight: '24px', display: 'flex', alignItems: 'center', fontWeight: '500' }}>Заявете консултация</a>
       </div>
       </div>
       <figure aria-label="Пример за автоматизации в реално време" style={{ margin: '64px 24px 0', border: '1px solid #1E1B16', background: '#FBF9F4' }}>
@@ -259,7 +260,7 @@ export default function Home() {
       <h2 style={{ flex: '999 1 600px', minWidth: '0', margin: '0', fontFamily: "'Literata', Georgia, serif", fontWeight: '400', fontSize: 'clamp(36px, 4.6vw, 68px)', lineHeight: '1.05', letterSpacing: '-0.025em' }}>Кой процес ви отнема най-много време?</h2>
       <div style={{ flex: '1 1 280px', minWidth: '0', display: 'flex', flexDirection: 'column', gap: '14px' }}>
       <p style={{ margin: '0', color: '#3C3832' }}>Разкажете ни. Ще ви покажем как изглежда автоматизиран.</p>
-      <a href="mailto:office@getnimble.bg" style={{ textDecoration: 'none', background: `${accent}`, color: '#FFFFFF', padding: '16px 24px', fontWeight: '500', alignSelf: 'flex-start', minHeight: '24px', display: 'flex', alignItems: 'center' }}>Заявете консултация</a>
+      <a href="mailto:office@getnimble.bg" data-consult style={{ textDecoration: 'none', background: `${accent}`, color: '#FFFFFF', padding: '16px 24px', fontWeight: '500', alignSelf: 'flex-start', minHeight: '24px', display: 'flex', alignItems: 'center' }}>Заявете консултация</a>
       <a href="mailto:office@getnimble.bg" style={{ fontSize: '15px', color: '#55504A' }}>office@getnimble.bg</a>
       </div>
       </div>
@@ -270,6 +271,7 @@ export default function Home() {
       <span>getnimble.bg</span>
       </footer>
       
+      <ConsultDialog />
       </div>
   );
 }
