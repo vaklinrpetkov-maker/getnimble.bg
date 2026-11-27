@@ -90,7 +90,7 @@ export default function ServicePage({ page }: { page: ServicePageData }) {
                     {section.items.map((item) => (
                       <li key={item.title} style={{ display: 'flex', flexWrap: 'wrap', gap: '6px 32px', padding: '20px 0', borderTop: '1px solid #C9C2B4' }}>
                         <span style={{ flex: '1 1 220px', fontFamily: SERIF, fontSize: '22px', lineHeight: '1.3' }}>
-                          {item.href ? <a href={item.href} style={{ textUnderlineOffset: '4px' }}>{item.title}</a> : item.title}
+                          {item.href ? <a href={item.href} style={{ textDecoration: 'none' }}>{item.title}</a> : item.title}
                         </span>
                         <span style={{ flex: '2 1 320px', color: '#3C3832' }}>{item.text}</span>
                       </li>

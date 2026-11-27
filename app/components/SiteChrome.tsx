@@ -3,13 +3,13 @@ import LogoMark from "./LogoMark";
 
 // Paths of the service pages. With `trailingSlash: true` every link ends in a slash.
 export const PAGES = {
-  ai: { href: "/izkustven-intelekt-za-biznesa/", label: "Изкуствен интелект за бизнеса" },
-  training: { href: "/obuchenie-izkustven-intelekt/", label: "Обучение по изкуствен интелект" },
-  geo: { href: "/optimizatsiya-za-ai-tarsachki/", label: "Оптимизация за AI търсачки (GEO)" },
+  ai: { href: "/izkustven-intelekt-za-biznesa/", label: "Изкуствен интелект за бизнеса", menu: "AI за бизнеса" },
+  training: { href: "/obuchenie-izkustven-intelekt/", label: "Обучение по изкуствен интелект", menu: "Обучение" },
+  geo: { href: "/optimizatsiya-za-ai-tarsachki/", label: "Оптимизация за AI търсачки (GEO)", menu: "GEO оптимизация" },
 };
 
-// Header shared by every page. On the homepage the menu scrolls within the page.
-// On other pages the same links lead back to the homepage sections.
+// Header shared by every page. The first three links are homepage sections: on the
+// homepage they scroll, elsewhere they lead back to it. The rest are the service pages.
 export function SiteHeader({ home = false }: { home?: boolean }) {
   const base = home ? "" : "/";
   return (
@@ -19,7 +19,9 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
         <a href={`${base}#automations`} style={{ textDecoration: 'none' }}>Автоматизации</a>
         <a href={`${base}#services`} style={{ textDecoration: 'none' }}>Решения</a>
         <a href={`${base}#integration`} style={{ textDecoration: 'none' }}>Интеграция</a>
-        <a href={`${base}#training`} style={{ textDecoration: 'none' }}>Обучение</a>
+        <a href={PAGES.ai.href} style={{ textDecoration: 'none' }}>{PAGES.ai.menu}</a>
+        <a href={PAGES.training.href} style={{ textDecoration: 'none' }}>{PAGES.training.menu}</a>
+        <a href={PAGES.geo.href} style={{ textDecoration: 'none' }}>{PAGES.geo.menu}</a>
         <a href={`${base}#contact`} data-consult style={{ textDecoration: 'underline', textUnderlineOffset: '4px', color: ACCENT, minHeight: '44px', display: 'flex', alignItems: 'center' }}>Заявете консултация</a>
       </nav>
     </header>
