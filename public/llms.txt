@@ -10,6 +10,7 @@
 
 - [Изкуствен интелект за бизнеса](https://getnimble.bg/izkustven-intelekt-za-biznesa/): как Nimble внедрява AI във фирми, примери за автоматизации, стъпки и често задавани въпроси
 - [Обучение по изкуствен интелект](https://getnimble.bg/obuchenie-izkustven-intelekt/): практическо обучение за екипи с примери от тяхната работа
+- [Оптимизация за AI търсачки (GEO)](https://getnimble.bg/optimizatsiya-za-ai-tarsachki/): как Nimble помага на фирми да присъстват в отговорите на ChatGPT, Gemini и Perplexity
 - [Начална страница](https://getnimble.bg/): всички решения, начин на работа и казус от строителство и имоти
 
 ## Как работи Nimble

@@ -5,6 +5,7 @@ import LogoMark from "./LogoMark";
 export const PAGES = {
   ai: { href: "/izkustven-intelekt-za-biznesa/", label: "Изкуствен интелект за бизнеса" },
   training: { href: "/obuchenie-izkustven-intelekt/", label: "Обучение по изкуствен интелект" },
+  geo: { href: "/optimizatsiya-za-ai-tarsachki/", label: "Оптимизация за AI търсачки (GEO)" },
 };
 
 // Header shared by every page. On the homepage the menu scrolls within the page.
@@ -19,7 +20,6 @@ export function SiteHeader({ home = false }: { home?: boolean }) {
         <a href={`${base}#services`} style={{ textDecoration: 'none' }}>Решения</a>
         <a href={`${base}#integration`} style={{ textDecoration: 'none' }}>Интеграция</a>
         <a href={`${base}#training`} style={{ textDecoration: 'none' }}>Обучение</a>
-        <a href={`${base}#case`} style={{ textDecoration: 'none' }}>Казус</a>
         <a href={`${base}#contact`} data-consult style={{ textDecoration: 'underline', textUnderlineOffset: '4px', color: ACCENT, minHeight: '44px', display: 'flex', alignItems: 'center' }}>Заявете консултация</a>
       </nav>
     </header>
@@ -33,6 +33,7 @@ export function SiteFooter() {
       <nav aria-label="Услуги" style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 24px' }}>
         <a href={PAGES.ai.href} style={{ color: '#55504A' }}>{PAGES.ai.label}</a>
         <a href={PAGES.training.href} style={{ color: '#55504A' }}>{PAGES.training.label}</a>
+        <a href={PAGES.geo.href} style={{ color: '#55504A' }}>{PAGES.geo.label}</a>
         <a href="mailto:office@getnimble.bg" style={{ color: '#55504A' }}>office@getnimble.bg</a>
       </nav>
     </footer>
