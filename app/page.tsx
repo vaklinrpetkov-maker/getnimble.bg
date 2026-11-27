@@ -1,7 +1,7 @@
 import { ACCENT as accent } from "./accent";
 import RotatingWord from "./components/RotatingWord";
 import LiveLog from "./components/LiveLog";
-import LogoMark from "./components/LogoMark";
+import { PAGES, SiteFooter, SiteHeader } from "./components/SiteChrome";
 import CountNumber from "./components/CountNumber";
 import CountUp from "./components/CountUp";
 import ConsultDialog from "./components/ConsultDialog";
@@ -21,17 +21,7 @@ export default function Home() {
   return (
       <div style={{ background: '#F4F1EA', color: '#1E1B16', fontFamily: "'Golos Text', 'Segoe UI', Arial, sans-serif", fontSize: '17px', lineHeight: '1.6' }}>
       
-      <header style={{ maxWidth: '1200px', margin: '0 auto', padding: '28px 32px', display: 'flex', flexWrap: 'wrap', gap: '24px', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #1E1B16' }}>
-      <a href="#top" aria-label="Nimble — начало" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px', fontFamily: "'Literata', Georgia, serif", fontSize: '26px', letterSpacing: '-0.01em' }}><LogoMark size={30} />Nimble</a>
-      <nav aria-label="Основно меню" style={{ display: 'flex', flexWrap: 'wrap', gap: '28px', fontSize: '15px', alignItems: 'center' }}>
-      <a href="#automations" style={{ textDecoration: 'none' }}>Автоматизации</a>
-      <a href="#services" style={{ textDecoration: 'none' }}>Решения</a>
-      <a href="#integration" style={{ textDecoration: 'none' }}>Интеграция</a>
-      <a href="#training" style={{ textDecoration: 'none' }}>Обучение</a>
-      <a href="#case" style={{ textDecoration: 'none' }}>Казус</a>
-      <a href="#contact" data-consult style={{ textDecoration: 'underline', textUnderlineOffset: '4px', color: `${accent}`, minHeight: '44px', display: 'flex', alignItems: 'center' }}>Заявете консултация</a>
-      </nav>
-      </header>
+      <SiteHeader home />
       
       <section id="top" style={{ position: 'relative', overflow: 'hidden' }}>
       <div aria-hidden="true" style={{ position: 'absolute', inset: '0', backgroundImage: 'linear-gradient(#E2DCCF 1px, transparent 1px), linear-gradient(90deg, #E2DCCF 1px, transparent 1px)', backgroundSize: '32px 32px', backgroundPosition: 'center top', WebkitMaskImage: 'radial-gradient(ellipse 75% 70% at 50% 35%, #000 35%, transparent 80%)', maskImage: 'radial-gradient(ellipse 75% 70% at 50% 35%, #000 35%, transparent 80%)' }}></div>
@@ -134,13 +124,14 @@ export default function Home() {
       <div style={{ flex: '1 1 220px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
       <h2 style={{ margin: '0', fontFamily: "'Literata', Georgia, serif", fontWeight: '400', fontSize: '36px', letterSpacing: '-0.015em' }}>AI решения за бизнеса</h2>
       <p style={{ margin: '0', color: '#55504A', fontSize: '15px' }}>Избираме според нуждите на фирмата ви.</p>
+      <a href={PAGES.ai.href} style={{ fontSize: '15px', textUnderlineOffset: '4px', alignSelf: 'flex-start' }}>Изкуствен интелект за бизнеса →</a>
       </div>
       <ul style={{ flex: '999 1 600px', minWidth: '0', margin: '0', padding: '0', listStyle: 'none', display: 'flex', flexDirection: 'column' }}>
       <li style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 32px', padding: '24px 0', borderTop: '1px solid #1E1B16' }}><span style={{ flex: '1 1 220px', fontFamily: "'Literata', Georgia, serif", fontSize: '23px' }}>CRM и ERP системи</span><span style={{ flex: '2 1 320px', color: '#3C3832' }}>Поръчки, склад, клиенти и продажби в една CRM и ERP система.</span></li>
       <li style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 32px', padding: '24px 0', borderTop: '1px solid #C9C2B4' }}><span style={{ flex: '1 1 220px', fontFamily: "'Literata', Georgia, serif", fontSize: '23px' }}>AI асистенти и чатбот за сайт</span><span style={{ flex: '2 1 320px', color: '#3C3832' }}>Отговарят на клиенти и служители денонощно, на български.</span></li>
       <li style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 32px', padding: '24px 0', borderTop: '1px solid #C9C2B4' }}><span style={{ flex: '1 1 220px', fontFamily: "'Literata', Georgia, serif", fontSize: '23px' }}>Автоматизация на бизнес процеси</span><span style={{ flex: '2 1 320px', color: '#3C3832' }}>Одобрения, документи и известия без ръчна работа.</span></li>
       <li style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 32px', padding: '24px 0', borderTop: '1px solid #C9C2B4' }}><span style={{ flex: '1 1 220px', fontFamily: "'Literata', Georgia, serif", fontSize: '23px' }}>Интеграция на системи</span><span style={{ flex: '2 1 320px', color: '#3C3832' }}>Програмите ви обменят данни сами.</span></li>
-      <li style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 32px', padding: '24px 0', borderTop: '1px solid #C9C2B4' }}><span style={{ flex: '1 1 220px', fontFamily: "'Literata', Georgia, serif", fontSize: '23px' }}>Обучение по изкуствен интелект</span><span style={{ flex: '2 1 320px', color: '#3C3832' }}>Екипът работи по-бързо с AI още на следващия ден.</span></li>
+      <li style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 32px', padding: '24px 0', borderTop: '1px solid #C9C2B4' }}><span style={{ flex: '1 1 220px', fontFamily: "'Literata', Georgia, serif", fontSize: '23px' }}><a href={PAGES.training.href} style={{ textUnderlineOffset: '4px' }}>Обучение по изкуствен интелект</a></span><span style={{ flex: '2 1 320px', color: '#3C3832' }}>Екипът работи по-бързо с AI още на следващия ден.</span></li>
       <li style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 32px', padding: '24px 0', borderTop: '1px solid #C9C2B4' }}><span style={{ flex: '1 1 220px', fontFamily: "'Literata', Georgia, serif", fontSize: '23px' }}>Отчети и анализи</span><span style={{ flex: '2 1 320px', color: '#3C3832' }}>Печалба по проект и клиент, винаги актуална.</span></li>
       <li style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 32px', padding: '24px 0', borderTop: '1px solid #C9C2B4', borderBottom: '1px solid #C9C2B4' }}><span style={{ flex: '1 1 220px', fontFamily: "'Literata', Georgia, serif", fontSize: '23px' }}>Документи и знания</span><span style={{ flex: '2 1 320px', color: '#3C3832' }}>Намирате нужния договор за секунди.</span></li>
       </ul>
@@ -185,6 +176,7 @@ export default function Home() {
       <p style={{ margin: '0', fontFamily: "'JetBrains Mono', monospace", fontSize: '13px', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#BDB6A8' }}>Обучение</p>
       <h2 style={{ margin: '0', fontFamily: "'Literata', Georgia, serif", fontWeight: '400', fontSize: 'clamp(32px, 3.6vw, 50px)', lineHeight: '1.1', letterSpacing: '-0.02em', textWrap: 'balance' }}>Екип, който знае как да ползва изкуствен интелект</h2>
       <p style={{ margin: '0', color: '#D6D0C4', maxWidth: '520px' }}>Обучаваме с примери от вашата работа, не от учебник.</p>
+      <a href={PAGES.training.href} style={{ color: '#F4F1EA', textUnderlineOffset: '4px', alignSelf: 'flex-start' }}>Обучение по изкуствен интелект за екипи →</a>
       </div>
       <div style={{ flex: '1 1 420px', minWidth: '0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(200px, 100%), 1fr))', gap: '32px 28px' }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', borderTop: '1px solid #F4F1EA', paddingTop: '16px' }}><span style={{ fontFamily: "'Literata', Georgia, serif", fontSize: '40px', lineHeight: '1', color: '#E3B9AE' }}>1</span><span style={{ fontSize: '19px', fontWeight: '500' }}>Работилници за екипи</span><span style={{ color: '#D6D0C4', fontSize: '15px' }}>Упражнения върху реални задачи.</span></div>
@@ -266,10 +258,7 @@ export default function Home() {
       </div>
       </section>
       
-      <footer style={{ maxWidth: '1200px', margin: '0 auto', padding: '28px 32px', borderTop: '1px solid #1E1B16', display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'space-between', alignItems: 'center', fontSize: '14px', color: '#55504A' }}>
-      <span style={{ display: 'flex', alignItems: 'center', gap: '10px' }}><LogoMark size={20} />© 2026 Нимбъл ЕООД · ЕИК 208021692 · София</span>
-      <span>getnimble.bg</span>
-      </footer>
+      <SiteFooter />
       
       <ConsultDialog />
       </div>
